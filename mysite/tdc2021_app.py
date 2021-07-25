@@ -13,3 +13,7 @@ def hello_world():
 @app.route('/tdc')
 def tdc_msg():
     return "Renderizando uma template"
+
+@app.route('/tdc/api')
+def tdc_api():
+    return "Äpi"
