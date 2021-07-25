@@ -16,4 +16,4 @@ def tdc_msg():
 
 @app.route('/tdc/api')
 def tdc_api():
-    return "Äpi"
+    return {"Api":"exemplo"}
