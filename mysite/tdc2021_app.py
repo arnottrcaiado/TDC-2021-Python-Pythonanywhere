@@ -3,6 +3,7 @@
 
 from flask import Flask
 from flask import render_template
+import tdc2021_func
 
 app = Flask(__name__)
 
