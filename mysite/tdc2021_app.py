@@ -9,7 +9,6 @@ app = Flask(__name__)
 def hello_world():
     return 'Ola. Minha primeira aplicacao'
 
-
 @app.route('/tdc')
 def tdc_msg():
     return "Renderizando uma template"
