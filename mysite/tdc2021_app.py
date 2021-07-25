@@ -2,6 +2,7 @@
 # A very simple Flask Hello World app for you to get started with...
 
 from flask import Flask
+from flask import render_template
 
 app = Flask(__name__)
 
@@ -11,7 +12,7 @@ def hello_world():
 
 @app.route('/tdc')
 def tdc_msg():
-    return "Renderizando uma template"
+    return render_template( "index.html" )
 
 @app.route('/tdc/api')
 def tdc_api():
