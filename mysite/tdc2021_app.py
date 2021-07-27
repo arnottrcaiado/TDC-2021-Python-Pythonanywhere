@@ -18,7 +18,7 @@ app = Flask(__name__)
 # endpoint http://tdc2021.pythonanywhere.com/
 @app.route('/')
 def hello_world():
-    return 'Ola. Minha primeira aplicacao'
+    return 'Ola TDC 2021. Minha primeira aplicacao'
 
 # endpoint http://tdc2021.pythonanywhere.com/tdc
 @app.route('/tdc')
