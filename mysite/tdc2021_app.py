@@ -5,8 +5,14 @@
 # Trilha: Python
 #
 # Autores:  Arnott Ramos Caiado
-#           Inoã Liberato
+#           Inoã de Paulo Liberato
 #
+# MVP, Protótipo, rápido Deploy Web com Python: uso do PythonAnywhere
+#
+#    Às vezes é necessário ter um protótipo rodando na web em tempo record. Ou ainda,
+#    você está diante de um desafio onde o tempo para validar a idéia é curtíssimo:
+#    eis que entra o PythonAnywhere como alternativa para sua solução.
+#    Isto ocorreu comigo há um tempo atrás, quando tinha que resolver em equipe um problema integrando back, front e mobile com Python.
 # ------------------------------------------------
 
 from flask import Flask, request
