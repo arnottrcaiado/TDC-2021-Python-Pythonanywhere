@@ -9,7 +9,7 @@
 #
 # ------------------------------------------------
 
-from flask import Flask
+from flask import Flask, request
 from flask import render_template
 import tdc2021_func
 
@@ -28,4 +28,6 @@ def tdc_msg():
 # endpoint http://tdc2021.pythonanywhere.com/tdc/api
 @app.route('/tdc/api')
 def tdc_api():
-    return {"Api":"exemplo"}
+    ipuser = request.headers['X-Real-IP']
+    return {"ip" : str(ipuser),
+    "Api,":"exemplo"}
