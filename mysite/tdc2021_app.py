@@ -19,6 +19,8 @@ from flask import Flask, request
 from flask import render_template
 import tdc2021_func
 
+chave_autenticacao = 'aSdrt12677489IopkljgrtrewwfghvcbnMmjgsfwety553724132788'
+
 app = Flask(__name__)
 
 #---------------------------------------------
@@ -38,5 +40,11 @@ def tdc_msg():
 @app.route('/tdc/api')
 def tdc_api():
     ipuser = request.headers['X-Real-IP']
-    return {"ip" : str(ipuser),
-    "Api,":"exemplo"}
+
+    chave = request.headers.get('secret-key')
+    if chave == None :
+        return {"ip": str(ipuser), "Erro" : "Não envio de chave" }
+    if chave != chave_autenticacao :
+        return {"ip": str(ipuser), "Erro" : "Autenticação" }
+    else :
+        return {"ip" : str(ipuser), "Api,":"exemplo"}
