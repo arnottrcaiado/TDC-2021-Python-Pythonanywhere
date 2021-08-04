@@ -28,18 +28,43 @@ app = Flask(__name__)
 # endpoint http://tdc2021.pythonanywhere.com/
 @app.route('/')
 def hello_world():
-    return 'Ola TDC 2021. Minha primeira aplicacao'
+    return {'Home':'Ola TDC 2021. Minha primeira aplicacao'}
 
 #--------------------------------------------------
 # endpoint http://tdc2021.pythonanywhere.com/tdc
 @app.route('/tdc')
-def tdc_msg():
+def tdc():
     return render_template( "index.html" )
 
 #-----------------------------------------------------
-# endpoint http://tdc2021.pythonanywhere.com/tdc/api
-@app.route('/tdc/api')
-def tdc_api():
+# endpoint http://tdc2021.pythonanywhere.com/tdcinput
+@app.route('/tdcinput', methods=['GET','POST'])
+def tdc_Input():
+    if request.method == 'GET':
+        return render_template( "tdc_input.html" )
+    if request.method == 'POST':
+        return {'Nome': str(request.form.get('nome')),
+                'Email': str(request.form.get('email'))}
+
+#-----------------------------------------------------
+# endpoint http://tdc2021.pythonanywhere.com/tdcradio
+@app.route('/tdcradio', methods=['GET','POST'])
+def tdc_Radio():
+    if request.method == 'GET':
+        return render_template( "tdc_radio_button.html" )
+    if request.method == 'POST':
+        return {'Idade': str(request.form.get('idade'))}
+
+#-----------------------------------------------------
+# endpoint http://tdc2021.pythonanywhere.com/tdcmenu
+@app.route('/tdcmenu', methods=['GET','POST'])
+def tdc_Menu():
+    return render_template( "tdc_menu.html" )
+
+#-----------------------------------------------------
+# endpoint http://tdc2021.pythonanywhere.com/tdcapi
+@app.route('/tdcapi')
+def tdc_Api():
     ipuser = request.headers['X-Real-IP']
 
     chave = request.headers.get('secret-key')
