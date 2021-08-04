@@ -15,9 +15,10 @@
 #    Isto ocorreu comigo há um tempo atrás, quando tinha que resolver em equipe um problema integrando back, front e mobile com Python.
 # ------------------------------------------------
 
+import tdc2021_func
+
 from flask import Flask, request
 from flask import render_template
-import tdc2021_func
 
 chave_autenticacao = 'aSdrt12677489IopkljgrtrewwfghvcbnMmjgsfwety553724132788'
 
