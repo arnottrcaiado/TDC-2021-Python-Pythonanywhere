@@ -13,8 +13,8 @@
 #    você está diante de um desafio onde o tempo para validar a idéia é curtíssimo:
 #    eis que entra o PythonAnywhere como alternativa para sua solução.
 #    Isto ocorreu comigo há um tempo atrás, quando tinha que resolver em equipe um problema integrando back, front e mobile com Python.
-#  endpoint principal   : https://tdc2021.pythonanywhere.com/
-#  endpoint menu        : https://tdc2021.pythonanywhere.com/tdc
+#  endpoint inicial     : https://tdc2021.pythonanywhere.com/
+#  endpoint opções      : https://tdc2021.pythonanywhere.com/tdc
 #  endpoint input       : https://tdc2021.pythonanywhere.com/tdcinput
 #  endpoint botao radio : https://tdc2021.pythonanywhere.com/tdcradio
 #  endpoint api         : https://tdc2021.pythonanywhere.com/tdcapi
