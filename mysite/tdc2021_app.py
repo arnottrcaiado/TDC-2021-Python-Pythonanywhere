@@ -22,7 +22,7 @@
 
 import tdc2021_func
 
-from flask import Flask, request
+from flask import Flask, request, json
 from flask import render_template
 
 chave_autenticacao = 'aSdrt12677489IopkljgrtrewwfghvcbnMmjgsfwety553724132788'
@@ -46,8 +46,8 @@ def tdc_Input():
     if request.method == 'GET':
         return render_template( "tdc_input.html" )
     if request.method == 'POST':
-        return {'Nome': str(request.form.get('nome')),
-                'Email': str(request.form.get('email'))}
+        return json.dumps({'Nome': str(request.form.get('nome')),
+                'Email': str(request.form.get('email'))},ensure_ascii=False )
 #-----------------------------------------------------
 # endpoint http://tdc2021.pythonanywhere.com/tdcradio
 @app.route('/tdcradio', methods=['GET','POST'])
@@ -55,7 +55,7 @@ def tdc_Radio():
     if request.method == 'GET':
         return render_template( "tdc_radio_button.html" )
     if request.method == 'POST':
-        return {'Idade': str(request.form.get('idade'))}
+        return json.dumps({'Idade': str(request.form.get('idade'))}, ensure_ascii=False )
 #-----------------------------------------------------
 # endpoint http://tdc2021.pythonanywhere.com/tdcmenu
 @app.route('/tdcmenu', methods=['GET','POST'])
@@ -68,8 +68,8 @@ def tdc_Api():
     ipuser = request.headers['X-Real-IP']
     chave = request.headers.get('secret-key')
     if chave == None :
-        return {"ip": str(ipuser), "Erro" : "Não envio de chave" }
+        return json.dumps({"ip": str(ipuser), "Erro" : "Não envio de chave" }, ensure_ascii=False )
     if chave != chave_autenticacao :
-        return {"ip": str(ipuser), "Erro" : "Autenticação" }
+        return json.dumps({"ip": str(ipuser), "Erro" : "Autenticação" }, ensure_ascii=False )
     else :
-        return {"ip" : str(ipuser), "Api,":"exemplo"}
+        return json.dumps({"ip" : str(ipuser), "Api,":"exemplo"}, ensure_ascii = False )
