@@ -62,8 +62,8 @@ def tdc_Radio():
 def tdc_Menu():
     return render_template( "tdc_menu.html" )
 #-----------------------------------------------------
-# endpoint http://tdc2021.pythonanywhere.com/tdcapi
-@app.route('/tdcapi')
+# endpoint https://tdc2021.pythonanywhere.com/tdcapi
+@app.route('/tdcapi', methodos=['GET','POST'])
 def tdc_Api():
     ipuser = request.headers['X-Real-IP']
     chave = request.headers.get('secret-key')
